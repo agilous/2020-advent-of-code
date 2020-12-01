@@ -1,14 +1,18 @@
-defmodule Day1Question1 do
+defmodule Day1Question2 do
   def pair_product([h | [ht | _]]) do
-    IO.puts("#{h} X #{ht} = #{h * ht}")
+    h * ht
+  end
+
+  def pair_product(_) do
+    nil
   end
 
   def pairs([]) do
-    []
+    nil
   end
 
   def pairs([_ | nil]) do
-    []
+    nil
   end
 
   def pairs([head | tail]) do
@@ -20,14 +24,15 @@ defmodule Day1Question1 do
   end
 
   def work() do
-    {:ok, contents} = 'day-1/question-1/input.txt'
+    {:ok, contents} = '/Users/bbarnett/Dropbox/src/agilous/advent-of-code/2020/day-1/question-1/input.txt'
                       |> File.read()
 
     String.split(contents, "\n", trim: true)
     |> Enum.map(&String.to_integer/1)
     |> pairs()
-    |> Enum.map(&pair_product/1)
+    |> IO.inspect()
+    |> Enum.map(&Day1Question2.pair_product/1)
   end
 end
 
-Day1Question1.work()
+Day1Question2.work()
