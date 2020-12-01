@@ -1,37 +1,32 @@
 defmodule Day1Question2 do
-  def pair_product([h | [ht | _]]) do
-    h * ht
-  end
-
-  def pair_product(_) do
-    nil
-  end
-
-  def pairs([]) do
-    nil
-  end
-
-  def pairs([_ | nil]) do
-    nil
-  end
-
-  def pairs([head | tail]) do
+  def pairs([], _, _), do: []
+  def pairs([_ | nil], _, _), do: []
+  def pairs([head | tail], target, first) do
     successes = tail
-                |> Enum.filter(fn(x) -> head + x == 2020 end)
-                |> Enum.map(fn(x) -> [head, x] end)
+                |> Enum.filter(fn(x) -> head + x == target end)
+                |> Enum.map(fn(x) -> [first, head, x] end)
 
-    successes ++ pairs(tail)
+    successes ++ pairs(tail, target, first)
+  end
+
+  def triplets([]), do: []
+  def triplets([head | tail]) do
+    target = 2020 - head
+    pairs(tail, target, head) ++ triplets(tail)
+  end
+
+  def triplet_product([a, b, c]) do
+    IO.puts("#{a} X #{b} X #{c} = #{a * b * c}")
   end
 
   def work() do
-    {:ok, contents} = '/Users/bbarnett/Dropbox/src/agilous/advent-of-code/2020/day-1/question-1/input.txt'
+    {:ok, contents} = 'day-1/question-1/input.txt'
                       |> File.read()
 
     String.split(contents, "\n", trim: true)
     |> Enum.map(&String.to_integer/1)
-    |> pairs()
-    |> IO.inspect()
-    |> Enum.map(&Day1Question2.pair_product/1)
+    |> triplets()
+    |> Enum.map(&triplet_product/1)
   end
 end
 
