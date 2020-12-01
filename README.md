@@ -7,4 +7,4 @@ git clone git@github.com:agilous/2020-advent-of-code.git
 cd 2020-advent-of-code
 asdf install # Or your version manager of preference.
 ```
-Then run individual files to see results: `elixir d1q1.exs`
+Then run individual files to see results: `elixir day-01/question-01.exs`

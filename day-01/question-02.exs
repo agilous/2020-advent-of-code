@@ -20,8 +20,7 @@ defmodule Day1Question2 do
   end
 
   def work() do
-    {:ok, contents} = 'day-1/question-1/input.txt'
-                      |> File.read()
+    {:ok, contents} = File.read('./day-01/input.txt')
 
     String.split(contents, "\n", trim: true)
     |> Enum.map(&String.to_integer/1)
