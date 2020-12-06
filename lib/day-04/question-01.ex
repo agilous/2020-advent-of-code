@@ -24,6 +24,3 @@ defmodule Day4Question1 do
     |> valid_passports()
   end
 end
-
-# Day4Question1.work("./lib/day-04/input.txt")
-# |> IO.puts()
