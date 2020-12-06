@@ -16,7 +16,7 @@ defmodule Day3Question1 do
   end
 
   def work() do
-    {:ok, contents} = File.read('./day-03/input.txt')
+    {:ok, contents} = File.read("./lib/day-03/input.txt")
 
     String.split(contents, "\n", trim: true)
     |> trees_encountered()

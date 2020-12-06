@@ -27,7 +27,7 @@ defmodule Day2Question2 do
   end
 
   def work() do
-    {:ok, contents} = File.read('./day-02/input.txt')
+    {:ok, contents} = File.read("./lib/day-02/input.txt")
 
     String.split(contents, "\n", trim: true)
     |> invalid_passwords()

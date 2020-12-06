@@ -6,5 +6,11 @@ My "solutions" such as they are for the [2020 Advent of Code](https://adventofco
 git clone git@github.com:agilous/2020-advent-of-code.git
 cd 2020-advent-of-code
 asdf install # Or your version manager of preference.
+mix test
 ```
-Then run individual files to see results: `elixir day-01/question-01.exs`
+Then run individual files to see results:
+```sh
+elixir lib/day-01/question-01.ex
+# --OR--
+mix run lib/day-01/question-01.ex
+```
