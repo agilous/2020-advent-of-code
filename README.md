@@ -14,3 +14,9 @@ elixir lib/day-01/question-01.ex
 # --OR--
 mix run lib/day-01/question-01.ex
 ```
+
+## Benchmarks
+Benchmarks provided via [Benchee](https://hex.pm/packages/benchee):
+```sh
+mix run test/benchmark.exs
+```
