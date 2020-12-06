@@ -1,6 +1,6 @@
 defmodule Day1Question1 do
   def pair_product([h | [ht | _]]) do
-    IO.puts("#{h} X #{ht} = #{h * ht}")
+    h * ht
   end
 
   def pairs([]) do
@@ -19,8 +19,8 @@ defmodule Day1Question1 do
     successes ++ pairs(tail)
   end
 
-  def work() do
-    {:ok, contents} = File.read("./lib/day-01/input.txt")
+  def work(path) do
+    {:ok, contents} = File.read(path)
 
     String.split(contents, "\n", trim: true)
     |> Enum.map(&String.to_integer/1)
@@ -28,5 +28,3 @@ defmodule Day1Question1 do
     |> Enum.map(&pair_product/1)
   end
 end
-
-Day1Question1.work()

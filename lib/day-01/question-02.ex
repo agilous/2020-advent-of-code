@@ -16,11 +16,11 @@ defmodule Day1Question2 do
   end
 
   def triplet_product([a, b, c]) do
-    IO.puts("#{a} X #{b} X #{c} = #{a * b * c}")
+    a * b * c
   end
 
-  def work() do
-    {:ok, contents} = File.read("./lib/day-01/input.txt")
+  def work(path) do
+    {:ok, contents} = File.read(path)
 
     String.split(contents, "\n", trim: true)
     |> Enum.map(&String.to_integer/1)
@@ -28,5 +28,3 @@ defmodule Day1Question2 do
     |> Enum.map(&triplet_product/1)
   end
 end
-
-Day1Question2.work()
