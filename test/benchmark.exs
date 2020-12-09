@@ -13,6 +13,7 @@ Benchee.run(
     "lib/day-06/question-01.ex" => fn -> Day6Question1.work("./lib/day-06/input.txt") end,
     "lib/day-06/question-02.ex" => fn -> Day6Question2.work("./lib/day-06/input.txt") end,
     "lib/day-07/question-01.ex" => fn -> Day7Question1.work("./lib/day-07/input.txt") end,
-    "lib/day-07/question-02.ex" => fn -> Day7Question2.work("./lib/day-07/input.txt", "shiny gold") end
+    "lib/day-07/question-02.ex" => fn -> Day7Question2.work("./lib/day-07/input.txt", "shiny gold") end,
+    "lib/day-08/question-01.ex" => fn -> Day8Question1.work("./lib/day-08/input.txt") end,
   }
 )
